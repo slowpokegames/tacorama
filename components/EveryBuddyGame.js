@@ -62,8 +62,6 @@ function EveryBuddyGame({options, setOptions, highScore, setHighScore}) {
     return (
             <div id="game">
               <h1>Score: {score}</h1>
-              <h2>Selected Cards: {selectedIndexes.join(", ")}</h2>
-              <h2>Selected Count: {selectedCount}</h2>
             <div id="cards">
               {shown.map((card, index) => (
                       <div className="card" key={index}>
