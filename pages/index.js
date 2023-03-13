@@ -51,7 +51,7 @@ export default function App() {
       ) : (
         <div>
         <h2>Choose a difficulty to begin!</h2>
-          <img src="cards/instructions.png"></img>
+          <img src="cards/instructions.png" width="640" height="900"></img>
           </div>
       )}
           <style jsx global>
