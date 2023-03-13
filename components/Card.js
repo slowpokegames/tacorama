@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
 
 function imgName(cardId) {
-    return "cards/front%20"+("00"+cardId).substr(-2,2)+".png"
+    return "cards/"+cardId+".png"
 }
 
 function Card({
@@ -28,24 +28,24 @@ function Card({
     })
 
     useEffect(() => {
-        if (selectedIndexes[3] === true && selectedIndexes.indexOf(id) > -1) {
+        if (selectedIndexes[4] === true && selectedIndexes.indexOf(id) > -1) {
             setTimeout(() => {
                 setSelect(state => !state)
                 setSelectedCount(0)
                 setSelectedIndexes([])
             }, 1000)
-        } else if (selectedIndexes[3] === false && selectedIndexes.indexOf(id) > -1) {
+        } else if (selectedIndexes[4] === false && selectedIndexes.indexOf(id) > -1) {
             setFlip(flip => !flip)
             setSelectedCount(0)
             setSelectedIndexes([])
             setTimeout(() => {
-                if (topOfDeck < 63) {
+                if (topOfDeck < 40) {
                     let sii = selectedIndexes.indexOf(id)
                     console.log(`TOD @ ${sii}: ` + topOfDeck)
                     shown[id].cardId = game[topOfDeck+sii].cardId
                     setShown(shown)
                     if (sii == 0) {
-                        setTopOfDeck(topOfDeck + 3)
+                        setTopOfDeck(topOfDeck + 4)
                     }
                     setFlip(flip => !flip)
                     setSelect(state => !state)
@@ -57,7 +57,7 @@ function Card({
     }, [selectedIndexes])
     
     const onCardClick = () => {
-        if (!flipped && selectedCount < 3) {
+        if (!flipped && selectedCount < 4) {
             if (!shown[id].selected) {
                 setSelect(state => !state)
                 setSelectedCount(selectedCount + 1)
@@ -87,7 +87,7 @@ function Card({
         className="c front"
         style={{
             opacity,
-            transform: transform.interpolate(t => `${t} rotateX(180deg)`),
+            transform: transform.interpolate(t => `${t} rotateX(180deg) rotateZ(0deg)`),
             "backgroundImage": "url(" + imgName(shown[id].cardId, true) + ")",
         }}
           />
