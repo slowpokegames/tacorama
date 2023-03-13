@@ -58,14 +58,14 @@ function Card({
     
     const onCardClick = () => {
         if (!flipped && selectedCount < 3) {
-            if (selected) {
-                setSelect(state => false)
+            if (!selected) {
+                setSelect(state => true)
                 setSelectedCount(selectedCount + 1)
                 const newIndexes = [...selectedIndexes]
                 newIndexes.push(id)
                 setSelectedIndexes(newIndexes)
             } else {
-                setSelect(state => true)
+                setSelect(state => false)
                 setSelectedCount(selectedCount - 1)
                 const newIndexes = selectedIndexes.filter(i => i != id)
                 setSelectedIndexes(newIndexes)
