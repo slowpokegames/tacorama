@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
-import ZoniGame from "../components/ZoniGame";
+import EveryBuddyGame from "../components/EveryBuddyGame";
 
 export default function App() {
   const [options, setOptions] = useState(null)
@@ -13,13 +13,14 @@ export default function App() {
   return (
     <div>
       <div className="container">
-        <h1>ZONI</h1>
+        <h1>EveryBuddy</h1>
         <div>High Score: {highScore}</div>
         <div>
           {options === null ? (
             <>
-              <button onClick={() => setOptions(8)}>Horizontal</button>
-              <button onClick={() => setOptions(5)}>Vertical</button>
+              <button onClick={() => setOptions(5)}>Easy</button>
+              <button onClick={() => setOptions(4)}>Medium</button>
+              <button onClick={() => setOptions(3)}>Hard</button>
             </>
           ) : (
             <>
@@ -41,14 +42,14 @@ export default function App() {
       </div>
 
       {options ? (
-        <ZoniGame
+        <EveryBuddyGame
           options={options}
           setOptions={setOptions}
           highScore={highScore}
           setHighScore={setHighScore}
         />
       ) : (
-        <h2>Choose an arrangement to begin!</h2>
+        <h2>Choose a difficulty to begin!</h2>
       )}
           <style jsx global>
   {`
@@ -81,14 +82,14 @@ export default function App() {
       outline: 0;
     }
     #cards {
-      width: ${130+150*(options-1)}px;
+      width: ${175+195*(options-1)}px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
     }
     .card {
-      width: 130px;
-      height: 94px;
+      width: 175px;
+      height: 125px;
       margin-bottom: 20px;
     }
     .card:not(:nth-child(${options}n)) {
@@ -97,8 +98,8 @@ export default function App() {
 
     .c {
       position: absolute;
-      max-width: 130px;
-      max-height: 94px;
+      max-width: 175px;
+      max-height: 125px;
       width: 50ch;
       height: 50ch;
       cursor: pointer;
@@ -117,7 +118,7 @@ export default function App() {
     }
 
     .front {
-      background-image: url(cards/ZONI-.png);
+      background-image: url(cards/front%2001.png);
       background-color: white;
     }
   `}
