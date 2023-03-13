@@ -49,7 +49,10 @@ export default function App() {
           setHighScore={setHighScore}
         />
       ) : (
+        <div>
         <h2>Choose a difficulty to begin!</h2>
+          <img src="cards/instructions.png"></img>
+          </div>
       )}
           <style jsx global>
   {`
