@@ -86,4 +86,4 @@ function EveryBuddyGame({options, setOptions, highScore, setHighScore}) {
   }
 }
 
-export default EveryBuddyGame;
+export default TacoramaGame;

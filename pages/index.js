@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
-import EveryBuddyGame from "../components/EveryBuddyGame";
+import TacoramaGame from "../components/TacoramaGame";
 
 export default function App() {
   const [options, setOptions] = useState(null)
@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div>
       <div className="container">
-        <h1>EveryBuddy</h1>
+        <h1>Tacorama</h1>
         <div>High Score: {highScore}</div>
         <div>
           {options === null ? (
@@ -42,7 +42,7 @@ export default function App() {
       </div>
 
       {options ? (
-        <EveryBuddyGame
+        <TacoramaGame
           options={options}
           setOptions={setOptions}
           highScore={highScore}

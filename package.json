@@ -1,6 +1,6 @@
 {
-  "name": "everybuddy",
-  "version": "0.1.0",
+  "name": "tacorama",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,10 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.1",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "next": "14.2.12",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-scripts": "^5.0.1",
-    "react-spring": "^8.0.27"
+    "react-spring": "9.7.4"
   }
 }
