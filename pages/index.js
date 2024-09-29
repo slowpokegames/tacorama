@@ -51,7 +51,7 @@ export default function App() {
       ) : (
         <div>
         <h2>Choose a difficulty to begin!</h2>
-          <img src="cards/instructions.png" width="640" height="900"></img>
+          <img src="cards/rules.png" width="640" height="900"></img>
           </div>
       )}
           <style jsx global>
@@ -85,24 +85,24 @@ export default function App() {
       outline: 0;
     }
     #cards {
-      width: ${175+195*(options-1)}px;
+      width: ${220+250*(options-1)}px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
     }
     .card {
-      width: 175px;
-      height: 125px;
-      margin-bottom: 20px;
+      width: 220px;
+      height: 300px;
+      margin-bottom: 30px;
     }
     .card:not(:nth-child(${options}n)) {
-      margin-right: 20px;
+      margin-right: 30px;
     }
 
     .c {
       position: absolute;
-      max-width: 175px;
-      max-height: 125px;
+      max-width: 220px;
+      max-height: 300px;
       width: 50ch;
       height: 50ch;
       cursor: pointer;
@@ -121,7 +121,7 @@ export default function App() {
     }
 
     .front {
-      background-image: url(cards/front%2001.png);
+      background-image: url(cards/001.png);
       background-color: white;
     }
   `}
