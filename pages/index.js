@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
+import Head from 'next/head';
 import TacoramaGame from "../components/TacoramaGame";
 
 export default function App() {
@@ -12,6 +13,9 @@ export default function App() {
 
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height"></meta>
+      </Head>
       <div className="container">
         <h1>Tacorama</h1>
         <div>High Score: {highScore}</div>
@@ -51,8 +55,8 @@ export default function App() {
       ) : (
         <div>
         <h2>Choose a difficulty to begin!</h2>
-          <img src="cards/rules.png" width="640" height="900"></img>
-          </div>
+          <img src="cards/rules.png" className="rules"></img>
+        </div>
       )}
           <style jsx global>
   {`
@@ -61,7 +65,7 @@ export default function App() {
       font-family: -apple-system, sans-serif;
     }
     .container {
-      width: 1060px;
+      width: 90%;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -83,6 +87,10 @@ export default function App() {
     }
     button:focus {
       outline: 0;
+    }
+    .rules {
+      width: auto;
+      height: auto;
     }
     #cards {
       width: ${220+250*(options-1)}px;

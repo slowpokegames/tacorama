@@ -45,6 +45,7 @@ function TacoramaGame({options, setOptions, highScore, setHighScore}) {
   else {
     return (
             <div id="game">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
               <h1>Score: {score}</h1>
             <div id="cards">
               {shown.map((card, index) => (
